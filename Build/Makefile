@@ -4,8 +4,8 @@ CFLAGS = -ffreestanding -fno-pie -m64 -nostdlib -Wall -Wextra
 
 all: kernel.elf
 
-kernel.o: kernel.c
-	$(CC) $(CFLAGS) -c kernel.c -o kernel.o
+kernel.o: ../kernel/kernel.c
+	$(CC) $(CFLAGS) -c ../kernel/kernel.c -o kernel.o
 
 kernel.elf: kernel.o linker.ld
 	$(LD) -T linker.ld -o kernel.elf kernel.o
